@@ -1,0 +1,18 @@
+jobs:
+  build:
+    docker:
+      - image: cimg/base:2023.06
+    steps:
+      - checkout
+      - run: <command>
+  test:
+    docker:
+      - image: cimg/base:2023.06
+    steps:
+      - checkout
+      - run: <command>
+workflows:
+  build_and_test:
+    jobs:
+      - build
+      - test
