@@ -2,11 +2,10 @@ package fr.univavignon.pokedex.api;
 
 import org.junit.Before;
 import org.junit.Test;
-import org.mockito.Mockito;
 import java.util.Arrays;
 import java.util.List;
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotNull;
+
+import static org.junit.Assert.*;
 import static org.mockito.Mockito.*;
 
 public class IPokedexTest {
@@ -14,7 +13,6 @@ public class IPokedexTest {
     private IPokedex pokedex;
     private Pokemon bulbizarre;
     private Pokemon aquali;
-
     @Before
     public void setUp() {
         pokedex = mock(IPokedex.class);
@@ -57,4 +55,9 @@ public class IPokedexTest {
         when(pokedex.getPokemons(any())).thenReturn(pokemons);
         assertEquals(pokemons, pokedex.getPokemons(null));
     }
+
+    @Test
+    public void testPokedexException() throws PokedexException {
+        when(pokedex.getPokemon(-2)).thenThrow(new PokedexException("INDEX NON VALIDE"));
+        assertThrows(PokedexException.class, () -> pokedex.getPokemon(-2));    }
 }
