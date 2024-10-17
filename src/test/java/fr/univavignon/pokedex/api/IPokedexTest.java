@@ -55,7 +55,7 @@ public class IPokedexTest {
         when(pokedex.getPokemons(any())).thenReturn(pokemons);
         assertEquals(pokemons, pokedex.getPokemons(null));
     }
-
+//
     @Test
     public void testPokedexException() throws PokedexException {
         when(pokedex.getPokemon(-2)).thenThrow(new PokedexException("INDEX NON VALIDE"));
