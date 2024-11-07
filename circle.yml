@@ -13,8 +13,8 @@ jobs:
           name: Build with Maven
           command: mvn clean install
       - run:
-          name: Jacoco
-          command: mvn jacoco:report
+          name: Run tests and collect coverage
+          command: mvn -B test
       - codecov/upload
 
 workflows:
