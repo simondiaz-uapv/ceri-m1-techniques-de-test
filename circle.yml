@@ -15,13 +15,10 @@ jobs:
       - run:
           name: Jacoco
           command: mvn jacoco:report
+      - codecov/upload
 
 workflows:
-  version: 2
-  upload-to-circle-ci:
+  version: 2.1
+  build-projet:
     jobs:
       - build:
-          filters:
-            branches:
-              only: master
-      - codecov/upload
