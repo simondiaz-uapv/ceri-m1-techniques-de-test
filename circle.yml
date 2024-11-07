@@ -14,16 +14,10 @@ orbs:
 workflows:
   version: 2
   upload-to-circle-ci:
-    jobs:
-      - build:
-          filters:
-            branches:
-              only: master
-      - checkout
-      - codecov/upload
-  build_and_test:
-    jobs:
-      - build:
-          filters:
-            branches:
-              only: master
+    build_and_test:
+      jobs:
+        - build:
+            filters:
+              branches:
+                only: master
+        - codecov/upload
