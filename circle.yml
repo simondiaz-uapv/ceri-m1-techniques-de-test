@@ -17,8 +17,8 @@ jobs:
           command: mvn -B test
       - codecov/upload
 
-workflows:
+workflow:
   version: 2.1
-  build-projet:
+  build-test:
     jobs:
       - build:
