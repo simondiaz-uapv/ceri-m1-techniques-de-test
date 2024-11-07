@@ -1,3 +1,14 @@
+
+## Informations
+
+- **Nom et Prénom**: Simon Diaz
+- **Groupe**: Groupe 1
+
+## Badges
+
+[![CircleCI](https://circleci.com/gh/username/repo-name.svg?style=svg)](https://circleci.com/gh/username/repo-name)
+[![codecov](https://codecov.io/gh/username/repo-name/branch/main/graph/badge.svg)](https://codecov.io/gh/username/repo-name)
+
 # UCE Génie Logiciel Avancé : Techniques de tests
 
 ## Introduction
