@@ -6,8 +6,8 @@
 
 ## Badges
 
-[![CircleCI](https://circleci.com/gh/username/repo-name.svg?style=svg)](https://circleci.com/gh/username/repo-name)
-[![codecov](https://codecov.io/gh/username/repo-name/branch/main/graph/badge.svg)](https://codecov.io/gh/username/repo-name)
+[![CircleCI](https://circleci.com/gh/simondiaz-uapv/ceri-m1-techniques-de-test.svg?style=svg)](https://circleci.com/gh/simondiaz-uapv/ceri-m1-techniques-de-test)
+[![codecov](https://codecov.io/gh/simondiaz-uapv/ceri-m1-techniques-de-test/branch/main/graph/badge.svg)](https://codecov.io/gh/simondiaz-uapv/ceri-m1-techniques-de-test)
 
 # UCE Génie Logiciel Avancé : Techniques de tests
 
