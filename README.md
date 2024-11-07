@@ -2,13 +2,12 @@
 ## Informations
 
 - **Nom et Prénom**: Simon Diaz
-- **Groupe**: Groupe 1
+- **Groupe**: Groupe M1_ILSEN_ALT
 
 ## Badges
 
 [![CircleCI](https://circleci.com/gh/simondiaz-uapv/ceri-m1-techniques-de-test.svg?style=svg)](https://circleci.com/gh/simondiaz-uapv/ceri-m1-techniques-de-test)
-[![codecov](https://codecov.io/gh/simondiaz-uapv/ceri-m1-techniques-de-test/branch/main/graph/badge.svg)](https://codecov.io/gh/simondiaz-uapv/ceri-m1-techniques-de-test)
-
+[![codecov](https://codecov.io/gh/simondiaz-uapv/ceri-m1-techniques-de-test/graph/badge.svg?token=Q95P7TA1HU)](https://codecov.io/gh/simondiaz-uapv/ceri-m1-techniques-de-test)
 # UCE Génie Logiciel Avancé : Techniques de tests
 
 ## Introduction
