@@ -13,10 +13,10 @@ orbs:
     codecov: codecov/codecov@4.0.1
 workflows:
   version: 2
-  upload-to-codecov:
+  upload-to-circle-ci:
     jobs:
       - checkout
-      - codecov/upload
+      - circleci/upload
   build_and_test:
     jobs:
       - build:
