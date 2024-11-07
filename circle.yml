@@ -1,5 +1,8 @@
 version: 2.1
 
+orbs:
+  codecov: codecov/codecov@1.0.5
+
 jobs:
   build:
     docker:
@@ -9,15 +12,13 @@ jobs:
       - run:
           name: Build with Maven
           command: mvn clean install
-orbs:
-    codecov: codecov/codecov@4.0.1
 
 workflows:
   version: 2
   upload-to-circle-ci:
-      jobs:
-        - build:
-            filters:
-              branches:
-                only: master
-        - codecov/upload
+    jobs:
+      - build:
+          filters:
+            branches:
+              only: master
+      - codecov/upload
