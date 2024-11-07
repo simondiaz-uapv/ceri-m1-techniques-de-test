@@ -11,10 +11,10 @@ jobs:
           command: mvn clean install
 orbs:
     codecov: codecov/codecov@4.0.1
+
 workflows:
   version: 2
   upload-to-circle-ci:
-    build_and_test:
       jobs:
         - build:
             filters:
