@@ -15,6 +15,9 @@
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <checkstyle.plugin.version>3.1.2</checkstyle.plugin.version>
+        <checkstyle.version>8.45.1</checkstyle.version>
+        <sevntu.checkstyle.plugin.version>1.41.0</sevntu.checkstyle.plugin.version>
     </properties>
 
     <dependencies>
@@ -46,11 +49,38 @@
             <artifactId>org.jacoco.report</artifactId>
             <version>0.8.12</version>
         </dependency>
+
     </dependencies>
+
 
 
     <build>
         <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-checkstyle-plugin</artifactId>
+                <version>${checkstyle.plugin.version}</version>
+                <dependencies>
+                    <dependency>
+                        <groupId>com.puppycrawl.tools</groupId>
+                        <artifactId>checkstyle</artifactId>
+                        <version>${checkstyle.version}</version>
+                    </dependency>
+                    <dependency>
+                        <groupId>com.github.sevntu-checkstyle</groupId>
+                        <artifactId>sevntu-checks</artifactId>
+                        <version>${sevntu.checkstyle.plugin.version}</version>
+                    </dependency>
+                </dependencies>
+                <configuration>
+                    <configLocation>checkstyle.xml</configLocation>
+                    <consoleOutput>true</consoleOutput>
+                    <failsOnError>false</failsOnError>
+                    <linkXRef>false</linkXRef>
+                    <outputFile>target/checkstyle-result.xml</outputFile>
+                </configuration>
+            </plugin>
+
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
@@ -91,5 +121,33 @@
                 </executions>
             </plugin>
         </plugins>
+
     </build>
+    <reporting>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-checkstyle-plugin</artifactId>
+                <version>${checkstyle.plugin.version}</version>
+                <configuration>
+                    <configLocation>checkstyle.xml</configLocation>
+                    <outputFile>target/site/checkstyle.html</outputFile>
+                    <linkXRef>false</linkXRef>
+                </configuration>
+            </plugin>
+        </plugins>
+    </reporting>
+
+    <profiles>
+        <profile>
+            <id>github-maven-repo</id>
+            <pluginRepositories>
+                <pluginRepository>
+                    <id>sevntu-maven</id>
+                    <name>sevntu-maven</name>
+                    <url>http://sevntu-checkstyle.github.io/sevntu.checkstyle/maven2</url>
+                </pluginRepository>
+            </pluginRepositories>
+        </profile>
+    </profiles>
 </project>
