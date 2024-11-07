@@ -40,7 +40,7 @@ public class IPokedexTest {
         when(pokedex.getPokemon(133)).thenReturn(aquali);
         assertEquals(bulbizarre, pokedex.getPokemon(0));
         assertEquals(aquali, pokedex.getPokemon(133));
-    }
+    }//
 
     @Test
     public void testGetPokemons() {
