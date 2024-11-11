@@ -79,5 +79,6 @@ public final class Pokemon extends PokemonMetadata {
 	public double getIv() {
 		return iv;
 	}
+
 	
 }
