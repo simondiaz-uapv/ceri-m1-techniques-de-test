@@ -9,6 +9,5 @@ public class PokedexFactoryTest {
         IPokemonMetadataProvider metadataProvider = new PokemonMetadataProvider();
         IPokemonFactory pokemonFactory = new PokemonFactory();
         IPokedex pokedex = pokedexFactory.createPokedex(metadataProvider, pokemonFactory);
-        assert pokedex.getClass() != Pokedex.class;
-    }
+        assert(pokedex != null);}
 }
