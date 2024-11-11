@@ -19,7 +19,9 @@ public class PokemonMetadataProviderTest {
         PokemonMetadataProvider pokemonMetadataProvider = new PokemonMetadataProvider();
         try {
             pokemonMetadataProvider.getPokemonMetadata(-1);
+            pokemonMetadataProvider.getPokemonMetadata(151);
         } catch (PokedexException e) {
+            assert (e.getMessage().equals("Index non correspondant a un pokemon"));
             assert(e.getMessage().equals("Index non correspondant a un pokemon"));
         }
     }
