@@ -16,7 +16,7 @@ public class IPokemonFactoryTest {
     }
 
     @Test
-    public void testCreatePokemon() {
+    public void testCreatePokemon() throws PokedexException {
         Pokemon bulbizarre = new Pokemon(0, "Bulbizarre", 613, 64, 4000, 4, 126, 126, 90, 56.0);
         Pokemon aquali = new Pokemon(133, "Aquali", 2729, 202, 5000, 4, 186, 168, 260, 100.0);
 

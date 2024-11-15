@@ -59,20 +59,20 @@ public class PokedexTest {
     }
 
     @Test
-    public void createPokemon(){
+    public void createPokemon() throws PokedexException {
         Pokemon pokemon = pokedex.createPokemon(0, 126, 126, 90, 56);
-        assertEquals("Mewtwo", pokemon.getName());
+        assertEquals("Bulbizarre", pokemon.getName());
         assertEquals(0, pokemon.getIndex());
-        assertEquals(160, pokemon.getAttack());
-        assertEquals(150, pokemon.getDefense());
-        assertEquals(140, pokemon.getStamina());
+        assertEquals(126, pokemon.getAttack());
+        assertEquals(126, pokemon.getDefense());
+        assertEquals(90, pokemon.getStamina());
         assertEquals(56, pokemon.getCandy());
     }
 
     @Test
     public void getPokemonMetadata() throws PokedexException {
         PokemonMetadata pokemonMetadata = pokedex.getPokemonMetadata(0);
-        assertEquals("Dracaufeu", pokemonMetadata.getName());
+        assertEquals("Bulbizarre", pokemonMetadata.getName());
         assertEquals(126, pokemonMetadata.getAttack());
         assertEquals(126, pokemonMetadata.getDefense());
         assertEquals(90, pokemonMetadata.getStamina());
