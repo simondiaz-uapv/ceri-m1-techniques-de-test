@@ -32,7 +32,7 @@ public interface IPokedex extends IPokemonMetadataProvider, IPokemonFactory {
 	 * 
 	 * @param id Unique pokedex relative identifier.
 	 * @return Pokemon denoted by the given identifier.
-	 * @throws PokedexException If the given <tt>index</tt> is not valids.
+	 * @throws PokedexException If the given <tt>index</tt> is not valid.
 	 */
 	Pokemon getPokemon(int id) throws PokedexException;
 	
