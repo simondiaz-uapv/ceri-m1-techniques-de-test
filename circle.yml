@@ -32,7 +32,7 @@ jobs:
             cp -R ../target/reports/apidocs/* .
             git add .
             git commit -m "Update Javadocs"
-            git push https://DOC_TOKEN@github.com/simondiaz-uapv/ceri-m1-techniques-de-test.git gh-pages
+            git push origin gh-pages
       - codecov/upload
 
 workflows:
