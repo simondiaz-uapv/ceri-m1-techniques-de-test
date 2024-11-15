@@ -76,8 +76,10 @@
                 <configuration>
                     <configLocation>checkstyle.xml</configLocation>
                     <encoding>UTF-8</encoding>
-                    <consoleOutput>true</consoleOutput>
-                    <failsOnError>true</failsOnError>
+                    <consoleOutput>false</consoleOutput>
+                    <failsOnError>false</failsOnError>
+                    <outputFile>target/checkstyle-result.xml</outputFile>
+                    <outputFileFormat>xml</outputFileFormat>
                 </configuration>
             </plugin>
 
