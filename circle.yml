@@ -28,11 +28,12 @@ jobs:
             git config --global user.name "simondiaz-uapv"
             git clone https://$DOC_TOKEN@github.com/simondiaz-uapv/ceri-m1-techniques-de-test.git gh-pages
             cd gh-pages
-            git checkout -b gh-pages || git checkout gh-pages
+            git checkout gh-pages || git checkout --orphan gh-pages
+            git rm -rf .
             cp -R ../target/reports/apidocs/* .
             git add .
             git commit -m "Update Javadocs"
-            git push https://$DOC_TOKEN@github.com/simondiaz-uapv/ceri-m1-techniques-de-test.git gh-pages
+            git push https://$DOC_TOKEN@github.com/simondiaz-uapv/ceri-m1-techniques-de-test.git gh-pages --force
       - codecov/upload
 
 workflows:
