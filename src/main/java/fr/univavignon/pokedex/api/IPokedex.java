@@ -47,7 +47,7 @@ public interface IPokedex extends IPokemonMetadataProvider, IPokemonFactory {
 	 * Returns an unmodifiable list of all pokemons this pokedex contains.
 	 * The list view will be sorted using the given <tt>order</tt>.
 	 * 
-	 * @param order Comparator instance used for sorting the created view.
+	 * @param order Comparator instance used for sorting the created views.
 	 * @return Sorted unmodifiable list of all pokemons.
 	 */
 	List<Pokemon> getPokemons(Comparator<Pokemon> order);
