@@ -15,13 +15,22 @@ public class PokemonMetadataProviderTest {
         assert(pokemonMetadata.getStamina() == 90);
     }
     @Test
-    public void testGetPokemonMetadataException() {
+    public void testGetPokemonMetadataExceptionInferieurA0() {
         PokemonMetadataProvider pokemonMetadataProvider = new PokemonMetadataProvider();
         try {
             pokemonMetadataProvider.getPokemonMetadata(-1);
             pokemonMetadataProvider.getPokemonMetadata(151);
         } catch (PokedexException e) {
             assert (e.getMessage().equals("Index non correspondant a un pokemon"));
+            assert(e.getMessage().equals("Index non correspondant a un pokemon"));
+        }
+    }
+    @Test
+    public void testGetPokemonMetadataExceptionSuperieurA150() {
+        PokemonMetadataProvider pokemonMetadataProvider = new PokemonMetadataProvider();
+        try {
+            pokemonMetadataProvider.getPokemonMetadata(151);
+        } catch (PokedexException e) {
             assert(e.getMessage().equals("Index non correspondant a un pokemon"));
         }
     }
