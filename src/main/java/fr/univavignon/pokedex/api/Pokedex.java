@@ -6,10 +6,10 @@ import java.util.List;
 
 public class Pokedex implements IPokedex{
     private List<Pokemon> listPokemons = new ArrayList<>();
-    private IPokemonMetadataProvider metadataProvider;
-    private IPokemonFactory pokemonFactory;
+    private PokemonMetadataProvider metadataProvider;
+    private PokemonFactory pokemonFactory;
 
-    public Pokedex(IPokemonMetadataProvider metadataProvider, IPokemonFactory pokemonFactory) {
+    public Pokedex(PokemonMetadataProvider metadataProvider, PokemonFactory pokemonFactory) {
         this.metadataProvider = metadataProvider;
         this.pokemonFactory = pokemonFactory;
     }
@@ -53,10 +53,6 @@ public class Pokedex implements IPokedex{
 
     @Override
     public PokemonMetadata getPokemonMetadata(int index) throws PokedexException {
-        if (index < 0 || index > 151) {
-            throw new PokedexException("Index de Pokemon invalide");
-        }
         return this.metadataProvider.getPokemonMetadata(index);
-
     }
 }

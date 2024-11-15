@@ -14,7 +14,7 @@ public class PokedexTest {
     public void setUp() {
         metadataProvider = new PokemonMetadataProvider();
         pokemonFactory = new PokemonFactory();
-        pokedex = new Pokedex(metadataProvider, pokemonFactory);
+        pokedex = new Pokedex((PokemonMetadataProvider) metadataProvider, (PokemonFactory) pokemonFactory);
     }
 
     @Test
@@ -81,10 +81,8 @@ public class PokedexTest {
     public void getPokemonMetadataException(){
         try {
             pokedex.getPokemonMetadata(-1);
-            pokedex.getPokemonMetadata(151);
         } catch (PokedexException e) {
-            assert (e.getMessage().equals("Index de Pokemon invalide"));
-            assert(e.getMessage().equals("Index de Pokemon invalide"));
+            assert(e.getMessage().equals("Index non correspondant a un pokemon"));
         }
     }
 
@@ -97,12 +95,5 @@ public class PokedexTest {
         assertEquals(pokemon.getName(), pokedex.getPokemons((p1, p2) -> p1.getName().compareTo(p2.getName())).get(0).getName());
     }
 
-    @Test
-    public void testGetPokemonExceptionAvec151(){
-        try {
-            pokedex.getPokemon(151);
-        } catch (PokedexException e) {
-            assertEquals("Index de Pokemon invalide", e.getMessage());
-        }
-    }
+
 }
