@@ -19,12 +19,12 @@ jobs:
           name: Run tests and collect coverage
           command: mvn -B test
       - run:
-        name: Build docs
-        command: mvn -B javadoc:javadoc
+          name: Build docs
+          command: mvn -B javadoc:javadoc
       - run:
           name: Deploy to GitHub Pages
           command: |
-            git config --global user.email "simon.diazdnx@gmail.com.com"
+            git config --global user.email "simon.diazdnx@gmail.com"
             git config --global user.name "simondiaz-uapv"
             git clone --branch gh-pages https://github.com/simondiaz-uapv/ceri-m1-techniques-de-test.git gh-pages
             cp -R target/reports/apidocs/* gh-pages/
@@ -34,8 +34,8 @@ jobs:
             git push origin gh-pages
       - codecov/upload
 
-workflow:
-  version: 2.1
+workflows:
+  version: 2
   build-test:
     jobs:
-      - build:
+      - build
