@@ -26,7 +26,7 @@ jobs:
           command: |
             git config --global user.email "simon.diaz@alumni.univ-avignon.fr"
             git config --global user.name "simondiaz-uapv"
-            git clone https://$DOC_TOKEN@github.com/simondiaz-uapv/ceri-m1-techniques-de-test.git gh-pages
+            git clone https://${{ secrets.DOC_TOKEN }}@github.com/simondiaz-uapv/ceri-m1-techniques-de-test.git gh-pages
             cd gh-pages
             git checkout -b gh-pages || git checkout gh-pages
             cp -R ../target/reports/apidocs/* .
