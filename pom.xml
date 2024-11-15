@@ -27,6 +27,11 @@
             <version>4.0</version>
         </dependency>
         <dependency>
+            <groupId>com.puppycrawl.tools</groupId>
+            <artifactId>checkstyle</artifactId>
+            <version>10.20.1</version>
+        </dependency>
+        <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
             <version>4.13.2</version>
@@ -59,25 +64,20 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-checkstyle-plugin</artifactId>
-                <version>${checkstyle.plugin.version}</version>
-                <dependencies>
-                    <dependency>
-                        <groupId>com.puppycrawl.tools</groupId>
-                        <artifactId>checkstyle</artifactId>
-                        <version>${checkstyle.version}</version>
-                    </dependency>
-                    <dependency>
-                        <groupId>com.github.sevntu-checkstyle</groupId>
-                        <artifactId>sevntu-checks</artifactId>
-                        <version>${sevntu.checkstyle.plugin.version}</version>
-                    </dependency>
-                </dependencies>
+                <version>3.1.2</version>
+                <executions>
+                    <execution>
+                        <phase>validate</phase>
+                        <goals>
+                            <goal>check</goal>
+                        </goals>
+                    </execution>
+                </executions>
                 <configuration>
                     <configLocation>checkstyle.xml</configLocation>
+                    <encoding>UTF-8</encoding>
                     <consoleOutput>true</consoleOutput>
-                    <failsOnError>false</failsOnError>
-                    <linkXRef>false</linkXRef>
-                    <outputFile>target/checkstyle-result.xml</outputFile>
+                    <failsOnError>true</failsOnError>
                 </configuration>
             </plugin>
 
@@ -123,20 +123,6 @@
         </plugins>
 
     </build>
-    <reporting>
-        <plugins>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-checkstyle-plugin</artifactId>
-                <version>${checkstyle.plugin.version}</version>
-                <configuration>
-                    <configLocation>checkstyle.xml</configLocation>
-                    <outputFile>target/site/checkstyle.html</outputFile>
-                    <linkXRef>false</linkXRef>
-                </configuration>
-            </plugin>
-        </plugins>
-    </reporting>
 
     <profiles>
         <profile>

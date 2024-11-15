@@ -13,6 +13,9 @@ jobs:
           name: Build with Maven
           command: mvn clean install
       - run:
+          name: Run Checkstyle
+          command: mvn checkstyle:check
+      - run:
           name: Run tests and collect coverage
           command: mvn -B test
       - codecov/upload
