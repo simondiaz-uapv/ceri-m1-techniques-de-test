@@ -12,6 +12,12 @@ public class PokemonMetadataProvider implements IPokemonMetadataProvider {
         POKEMON_METADATA.put(133, new PokemonMetadata(133, "Aquali", 186, 168, 260));
     }
 
+    /**
+     *
+     * @param index Index of the pokemon to retrieve metadata for.
+     * @return Metadata of the pokemon identified by the given index.
+     * @throws PokedexException instance
+     */
     @Override
     public PokemonMetadata getPokemonMetadata(int index) throws PokedexException {
         if (!POKEMON_METADATA.containsKey(index)) {

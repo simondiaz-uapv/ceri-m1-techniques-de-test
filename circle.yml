@@ -18,6 +18,17 @@ jobs:
       - run:
           name: Run tests and collect coverage
           command: mvn -B test
+      - run:
+        name: Build docs
+        command: mvn -B javadoc:javadoc
+
+      - run:
+          name: Deploy to GitHub Pages
+          uses: peaceiris/actions-gh-pages@v4
+          with:
+            github_token: ${{ secrets.DOC_TOKEN }}
+            publish_dir: ./target/reports/apidocs
+
       - codecov/upload
 
 workflow:
