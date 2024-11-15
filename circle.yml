@@ -7,9 +7,6 @@ jobs:
   build:
     docker:
       - image: circleci/openjdk:8-jdk
-    environment:
-      CIRCLECI: true
-      DOC_TOKEN: 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
     steps:
       - checkout
       - run:
