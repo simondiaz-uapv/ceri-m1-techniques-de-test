@@ -35,12 +35,10 @@ public class PokedexTest {
     }
 
     @Test
-    public void testGetPokemonException(){
+    public void testGetPokemonExceptionAvec0(){
         try {
             pokedex.getPokemon(0);
-            pokedex.getPokemon(151);
         } catch (PokedexException e) {
-            assertEquals("Index de Pokemon invalide", e.getMessage());
             assertEquals("Index de Pokemon invalide", e.getMessage());
         }
     }
@@ -97,5 +95,14 @@ public class PokedexTest {
         Pokemon pokemon2 = new Pokemon(1, "Herbizarre", 126, 126, 90, 613, 64, 4000, 4, 56);
         pokedex.addPokemon(pokemon2);
         assertEquals(pokemon.getName(), pokedex.getPokemons((p1, p2) -> p1.getName().compareTo(p2.getName())).get(0).getName());
+    }
+
+    @Test
+    public void testGetPokemonExceptionAvec151(){
+        try {
+            pokedex.getPokemon(151);
+        } catch (PokedexException e) {
+            assertEquals("Index de Pokemon invalide", e.getMessage());
+        }
     }
 }
