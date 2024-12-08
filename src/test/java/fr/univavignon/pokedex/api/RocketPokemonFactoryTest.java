@@ -7,7 +7,7 @@ import static org.junit.Assert.assertTrue;
 
 public class RocketPokemonFactoryTest {
     @Test
-    public void testCreatePokemon() throws PokedexException {
+    public void testCreatePokemon() {
         RocketPokemonFactory pokemonFactory = new RocketPokemonFactory();
         Pokemon pokemon = pokemonFactory.createPokemon(1, 160, 150, 140, 100);
         assertEquals(pokemon.getIndex(), 1);
@@ -33,16 +33,16 @@ public class RocketPokemonFactoryTest {
         assertEquals(poekmon2.getCandy(), 100);
 
         //Test création Pikachu de sasha
-        Pokemon poekmon3 = pokemonFactory.createPokemon(-1, 160, 150, 140, 100);
-        assertEquals(poekmon3.getIndex(), -1);
-        assertEquals(poekmon3.getName(), "Ash's Pikachu");
-        assertTrue(poekmon3.getAttack() <= 100 && poekmon3.getAttack()>=0);
-        assertTrue(poekmon3.getDefense() <= 100 && poekmon3.getDefense()>=0);
-        assertTrue(poekmon3.getStamina() <= 100 && poekmon3.getStamina()>=0);
-        assertEquals(poekmon3.getCp(), 160);
-        assertEquals(poekmon3.getHp(), 150);
-        assertEquals(poekmon3.getDust(), 140);
-        assertEquals(poekmon3.getCandy(), 100);
+        Pokemon pokemon3 = pokemonFactory.createPokemon(-1, 160, 150, 140, 100);
+        assertEquals(pokemon3.getIndex(), -1);
+        assertEquals(pokemon3.getName(), "Ash's Pikachu");
+        assertEquals(pokemon3.getAttack(), 1000);
+        assertEquals(pokemon3.getDefense(), 1000);
+        assertEquals(pokemon3.getStamina(), 1000);
+        assertEquals(pokemon3.getCp(), 160);
+        assertEquals(pokemon3.getHp(), 150);
+        assertEquals(pokemon3.getDust(), 140);
+        assertEquals(pokemon3.getCandy(), 100);
     }
 
     @Test
