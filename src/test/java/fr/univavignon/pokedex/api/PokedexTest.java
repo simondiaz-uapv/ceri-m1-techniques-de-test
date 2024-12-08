@@ -96,9 +96,17 @@ public class PokedexTest {
     }
 
     @Test
-    public void getPokemonException() {
+    public void getPokemonExceptionInferior0() {
         try {
-            pokedex.getPokemon(1);
+            pokedex.getPokemon(-2);
+        } catch (PokedexException e) {
+            assertEquals("Index de Pokemon invalide", e.getMessage());
+        }
+    }
+    @Test
+    public void getPokemonExceptionIndexSuperiorLengthList() {
+        try {
+            pokedex.getPokemon(pokedex.size()+1);
         } catch (PokedexException e) {
             assertEquals("Index de Pokemon invalide", e.getMessage());
         }
