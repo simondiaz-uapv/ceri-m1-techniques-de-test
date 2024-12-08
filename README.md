@@ -1,48 +1,29 @@
 
-## Informations
-
-- **Nom et Prénom**: Simon Diaz
-- **Groupe**: Groupe M1_ILSEN_ALT
-
 ## Badges
 
 [![CircleCI](https://circleci.com/gh/simondiaz-uapv/ceri-m1-techniques-de-test.svg?style=svg)](https://circleci.com/gh/simondiaz-uapv/ceri-m1-techniques-de-test)
 [![codecov](https://codecov.io/gh/simondiaz-uapv/ceri-m1-techniques-de-test/graph/badge.svg?token=Q95P7TA1HU)](https://codecov.io/gh/simondiaz-uapv/ceri-m1-techniques-de-test)
 ![Checkstyle](https://img.shields.io/badge/checkstyle-passing-brightgreen)
+
+
 # UCE Génie Logiciel Avancé : Techniques de tests
+## Informations
 
-## Introduction
+- **Nom et Prénom**: Simon Diaz
+- **Groupe**: Groupe M1_ILSEN_ALT
 
-Vous allez à travers ces projet mettre en application une partie des aspects évoqués en cours vis à vis des techniques de tests.  
-Pour cela nous allons réaliser un projet logiciel de petite taille, en suivant la roadmap suivante : 
-- Setup du projet
-- Mise en place des outils d’intégration continue
-- Écriture des tests unitaires
-- Écriture des mocks, et validation des tests
-- Développement dirigé par les tests
-- Documentation et conventions de style
-- Test d'une implémentation donnée
 
-Durant cette série de TPs, le gestionnaire de version Git sera utilisé à foison, à travers la plateforme GitHub. Si vous n’êtes pas à l’aise avec cet outil[^1], [voici](http://rogerdudler.github.io/git-guide/) un petit guide à garder sous la main.
+## Rapport personnel du TP
+Pour les choix d'implémentation à partir du tp4 j'ai essayé de faire ce que me demandait l'énoncé. 
+La "liberté" que je me suis permis c'est de générer aléatoirement les iv et de stocker les pokemonMetadata dans un HashMap.
 
-## Sujets
+Pour le TP6 voici mes observations :
+Dès le début je n'ai pas pu commit la classe java rajouté car le checkstyle ne me le permettait pas ( il y avait ou manquait des espaces ).
+Après rajout de la classe de la team Rocket sur Github mon codecov est passé de 99% à 74% car cette classe n'était pas couvertes.
+Pour appliquer mes test à cette classe j'ai copié collé ce qu'il y avait dans ma classe PokemonFactoryTest en remplaçant la classe pokemonFactory par la nouvelle.
+Les tests ne sont pas passé car les données de pokémon sont différentes des miennes, j'ai alors changé l'id de test et le nom de pokemon.
+J'ai aussi eu des erreurs sur les stats de défense et d'attaque car l'implémentation de la team rocket la fait aléatoirement entre 0 à 100.
+J'ai du aussi changer l'encapsulation de la fonction generateRandomStat pour faire les test dessus.
+Une fois les modifications faites en fonction de ce que fait la classe c'est passé.
+En conclusion cet exercice à pu me montrer les différences d'implémentation entre la mienne et celle de la team rocket.
 
-L'ensemble des sujets de TPs peut être trouvé dans le dossier `TPs`.
-
-Le dossier `src` contient la définition de l'ensemble des interfaces qui seront l'objet de vos travaux.
-
-## Rendus
-
-Le rendu des TPs se fait au rythme suivant :
-
-- TP1 : 2ème séance
-- TP2 : 2ème séance
-- TP3 : 3ème séance
-- TP4 : 5ème séance
-- TP5 : dernière séance
-- TP6 : dernière séance
-
-Pour chaque rendu vous devez créer un tag à partir du commit qui correspond à la complétion du TP.  
-Si vous ne spécifiez pas de tag, le dernier commit à la date-heure de la fin de séance sera celui considéré.
-
-[^1]: Si vous n’êtes vraiment pas à l’aise avec cet outil nous vous conseillons quand même vivement de vous y mettre.

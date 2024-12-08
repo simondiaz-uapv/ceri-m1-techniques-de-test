@@ -10,7 +10,7 @@ import fr.univavignon.pokedex.api.IPokemonFactory;
 import fr.univavignon.pokedex.api.Pokemon;
 
 public class RocketPokemonFactory implements IPokemonFactory {
-	
+
 	private static Map<Integer, String> index2name;
 	static {
 		Map<Integer, String> aMap = new HashMap<Integer, String>();
@@ -20,8 +20,8 @@ public class RocketPokemonFactory implements IPokemonFactory {
         //TODO : Gotta map them all !
         index2name = UnmodifiableMap.unmodifiableMap(aMap);
 	}
-	
-	private static int generateRandomStat() {
+
+	static int generateRandomStat() {
 		int total = 0;
 		for (int i = 0; i < 1000000; i++)
 		{
