@@ -95,5 +95,14 @@ public class PokedexTest {
         assertEquals(pokemon.getName(), pokedex.getPokemons((p1, p2) -> p1.getName().compareTo(p2.getName())).get(0).getName());
     }
 
+    @Test
+    public void getPokemonException() {
+        try {
+            pokedex.getPokemon(1);
+        } catch (PokedexException e) {
+            assertEquals("Index de Pokemon invalide", e.getMessage());
+        }
+    }
+
 
 }
