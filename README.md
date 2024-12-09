@@ -25,5 +25,8 @@ Les tests ne sont pas passé car les données de pokémon sont différentes des 
 J'ai aussi eu des erreurs sur les stats de défense et d'attaque car l'implémentation de la team rocket la fait aléatoirement entre 0 à 100.
 J'ai du aussi changer l'encapsulation de la fonction generateRandomStat pour faire les test dessus.
 Une fois les modifications faites en fonction de ce que fait la classe c'est passé.
+
+Pour vraiment tester la classe comme une PokemonFactory , j'ai refactor la mienne en MyPokemonFactory et celle de la team Rocket en PokemonFactory.
+La conclusion est la meme les tests ne passait pas du au nom des pokémons et des stats aléatoire.
 En conclusion cet exercice à pu me montrer les différences d'implémentation entre la mienne et celle de la team rocket.
 

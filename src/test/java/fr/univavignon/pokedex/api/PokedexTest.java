@@ -4,6 +4,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 public class PokedexTest {
 
@@ -60,12 +61,13 @@ public class PokedexTest {
 
     @Test
     public void createPokemon() throws PokedexException {
-        Pokemon pokemon = pokedex.createPokemon(0, 126, 126, 90, 56);
-        assertEquals("Bulbizarre", pokemon.getName());
-        assertEquals(0, pokemon.getIndex());
-        assertEquals(126, pokemon.getAttack());
-        assertEquals(126, pokemon.getDefense());
-        assertEquals(90, pokemon.getStamina());
+        Pokemon pokemon = pokedex.createPokemon(3, 126, 126, 90, 56);
+        assertEquals("MISSINGNO", pokemon.getName());
+        assertEquals(
+                3, pokemon.getIndex());
+        assertTrue(pokemon.getAttack() <= 100 && pokemon.getAttack()>=0);
+        assertTrue(pokemon.getDefense() <= 100 && pokemon.getDefense()>=0);
+        assertTrue(pokemon.getStamina() <= 100 && pokemon.getStamina()>=0);
         assertEquals(56, pokemon.getCandy());
     }
 

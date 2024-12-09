@@ -8,7 +8,7 @@ import static org.junit.Assert.assertTrue;
 public class RocketPokemonFactoryTest {
     @Test
     public void testCreatePokemon() {
-        RocketPokemonFactory pokemonFactory = new RocketPokemonFactory();
+        PokemonFactory pokemonFactory = new PokemonFactory();
         Pokemon pokemon = pokemonFactory.createPokemon(1, 160, 150, 140, 100);
         assertEquals(pokemon.getIndex(), 1);
         assertEquals(pokemon.getName(), "Bulbasaur");
@@ -47,7 +47,7 @@ public class RocketPokemonFactoryTest {
 
     @Test
     public void testGenerateRandomStat() {
-        int stat = RocketPokemonFactory.generateRandomStat();
+        int stat = PokemonFactory.generateRandomStat();
         assertTrue(stat >= 0 && stat <= 100);
     }
 }
